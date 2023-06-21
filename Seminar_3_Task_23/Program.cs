@@ -4,25 +4,26 @@
 3 -> 1, 8, 27
 5 -> 1, 8, 27, 64, 125 */
 
-int RandomNumber (int min, int max) {
-    int result = new Random().Next(min, max + 1);
-    return result;
-}
 
-void Print(string text) {
-    Console.Write(text);
-    //Console.ForegroundColor = ConsoleColor.Yellow;
-}
+/*Console.Write("Enter number ");
+int number = Convert.ToInt32(Console.ReadLine());
 
-void GetSquare (int rand){
-    for (int i = 1; i <= rand; i++)
+ for (int i = 1; i <= number; i++)
     {
         Console.WriteLine($"{Math.Pow(i, 3)}");
-        //Console.ForegroundColor = ConsoleColor.Blue;
     }
+*/
 
+Console.Write("Enter number ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+void GetCube (int number) {;
+    for (int i = 1; i <= number; i++)
+    {
+        Console.WriteLine($"{Math.Pow(i, 3)}");
+    }
 }
 
-int rand = RandomNumber(1, 10);
-Print($"{rand}");
-GetSquare(rand);
+GetCube(number);
+
+
