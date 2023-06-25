@@ -3,15 +3,15 @@
 82 -> 10
 9012 -> 12 */
 
-int GetNumber (string description) {  // получаем целое число
+int GetNumber (string description) {  
 
-    int number; // inizilisation
-    Console.WriteLine($"{description} =>"); //форматированный вывод
+    int number; 
+    Console.WriteLine($"{description} =>");
 
     while (true) 
     {
-        string temp = Console.ReadLine(); // получаем строку с консоли и далее с этой строкой нужно что-то делать
-        if(int.TryParse(temp, out number)) {  // конвертация числа из строки
+        string temp = Console.ReadLine();
+        if(int.TryParse(temp, out number)) { 
             return number;
         }
                 Console.Write($"This number \"{temp}\" is not correct. Try again =>");
@@ -23,9 +23,9 @@ int GetNumber (string description) {  // получаем целое число
 
 int GetSum (int number) {
     int sum = 0;
-    while (number!=0)
+    while (number != 0)
     {
-        sum += number%10;
+        sum += number % 10;
         number /= 10;
     }
     return sum;
