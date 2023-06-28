@@ -37,7 +37,7 @@ Console.WriteLine($"Array is [{Print(array)}]");
 } 
 
 var tuple = FindMaxMin(array);
-Console.WriteLine($"MaxNum is: {tuple.MaxNum} MinNum is {tuple.MinNum} Production is {tuple.ProdNum}");
+Console.WriteLine($"MaxDouble is: {tuple.MaxNum} ; MinDouble is {tuple.MinNum}; double subtraction is {tuple.ProdNum}");
 
 
 
