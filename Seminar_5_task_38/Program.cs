@@ -25,7 +25,7 @@ Console.WriteLine($"Array is [{Print(array)}]");
 
 (double MaxNum, double MinNum, double ProdNum) FindMaxMin (double [] array) {
     double max = 0;
-    double min = -0;
+    double min = 0;
 
     for (int i = 0; i < array.Length; i++)
     {
@@ -37,8 +37,8 @@ Console.WriteLine($"Array is [{Print(array)}]");
 } 
 
 var tuple = FindMaxMin(array);
-Console.WriteLine($"MaxDouble is: {tuple.MaxNum} ; MinDouble is {tuple.MinNum}; double subtraction is {tuple.ProdNum}");
-
+Console.WriteLine($"MaxDouble is: {tuple.MaxNum}; MinDouble is {tuple.MinNum}");
+Console.WriteLine ($"Double subtraction is {tuple.MaxNum} - {tuple.MinNum} = {tuple.ProdNum}");
 
 
 
