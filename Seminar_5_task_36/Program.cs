@@ -8,7 +8,7 @@ int [] CreateArray (int size, int min, int max) {
     int [] array = new int [size];
     Random rand = new Random();
 
-    for (int i =0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
         array[i] = rand.Next (min, max + 1);
 
@@ -36,5 +36,6 @@ int OddSum (int [] array) {
 int [] array = CreateArray(6, 1, 9);
 Console.WriteLine($"Array is [{Print(array)}]");
 
+
 var tuple = OddSum(array);
-Console.WriteLine($"Sum of elements in odd positions are:{OddSum(array)}");
+Console.WriteLine($"Sum of elements in odd positions is :{OddSum(array)}");
