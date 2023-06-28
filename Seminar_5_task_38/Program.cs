@@ -10,7 +10,7 @@ double [] CreateArray (int size, double min, double max) {
 
     for (int i =0; i < size; i++)
     {
-        array[i] = Math.Round(rand.Next(-100, 101)*0.1, 1);
+        array[i] = Math.Round(rand.Next(-100, 1001)*0.1, 1);
 
     }
     return array;
