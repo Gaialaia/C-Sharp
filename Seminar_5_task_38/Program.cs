@@ -17,39 +17,29 @@ double [] CreateArray (int size, double min, double max) {
 }
 
 string Print (double [] array) {
-    return string.Join(",", array);
+    return string.Join("|", array);
 }
 
 double [] array = CreateArray(6, 10, 100);
 Console.WriteLine($"Array is [{Print(array)}]");
 
+(double MaxNum, double MinNum, double ProdNum) FindMaxMin (double [] array) {
+    double max = 0;
+    double min = -0;
 
-
-
-double max = array[0];
-for(int i = 0; i < 6; ++i)
-{
-    if(array[i] > max)
+    for (int i = 0; i < array.Length; i++)
     {
-        max = array[i];
+        max = array[i] < max ? max:array[i];
+        min = array[i] > min ? min:array[i];      
     }
-}
-Console.Write($"max digit is {max} ");
+    return (MaxNum: max, MinNum: min, ProdNum: max-min);
 
-double min = array[0];
-for(int i = 0; i < 6; ++i)
-{
-    if(array[i] < min)
-    {
-        min = array[i];
-    }
-}
-Console.WriteLine($" min digit is {min} ");
+} 
+
+var tuple = FindMaxMin(array);
+Console.WriteLine($"MaxNum is: {tuple.MaxNum} MinNum is {tuple.MinNum} Production is {tuple.ProdNum}");
 
 
-double ProductNum (double max, double min){
-      double sum = max -min;
-      return sum;
-}
 
-Console.WriteLine(ProductNum);
+
+    
