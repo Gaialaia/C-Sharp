@@ -8,8 +8,9 @@
 8 4 2 4
 17 -> такого числа в массиве нет*/
 
+//без метода:
 
-int numcol = GetNumber("Enter column number ");
+/*int numcol = GetNumber("Enter column number ");
 int numrow = GetNumber("Enter row number ");
 
 int [,] array = CreateArray(3,4, -100, 100);
@@ -21,8 +22,8 @@ if (numrow > array.GetLength(1) || numcol > array.GetLength(0))
 }
 else
 {
-    Console.WriteLine($"Element is {array[numrow,numcol]}");
-} 
+    Console.WriteLine($"Element is {array[numrow,numcol]}"); 
+} */
 
 int [,] CreateArray (int row, int col, int min, int max) {
     Random rand = new Random();
@@ -47,6 +48,7 @@ void PrintArray (int [,]array){
         for (int j = 0; j < col; j++)
         {
             Console.Write($"{array[i,j]}\t");
+            Console.ForegroundColor = ConsoleColor.Blue;
         }
         Console.WriteLine();
     } 
@@ -70,11 +72,11 @@ int GetNumber (string description) {
 
 }
 
-//int [,] array = CreateArray(3,4, -100, 100);
-//PrintArray(array);
+int [,] array = CreateArray(3,4, -100, 100);
+PrintArray(array);
 
-
-/*void CheckNum (int row, int col) {
+//метод
+void CheckNum (int row, int col) {
 
     int numrow = GetNumber("Enter row number ");
     int numcol = GetNumber("Enter column number ");
@@ -83,13 +85,15 @@ int GetNumber (string description) {
     {
         Console.WriteLine ("Element does not exist");
     }
-    else 
+
+    else
     {
+    
     object CheckNum = array.GetValue(numcol,numrow);
-    Console.WriteLine(CheckNum);
+    Console.WriteLine($" Number under this position is {CheckNum}");
 }
 }
-CheckNum(3,4);*/
+CheckNum(3,4);
 
 
 
