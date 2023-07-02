@@ -9,20 +9,20 @@
 17 -> такого числа в массиве нет*/
 
 
-/*int numcol = GetNumber("Enter number ");
-int numrow = GetNumber("Enter number ");
+int numcol = GetNumber("Enter column number ");
+int numrow = GetNumber("Enter row number ");
 
 int [,] array = CreateArray(3,4, -100, 100);
 PrintArray(array);
 
-if (numcol > array.GetLength(0) || numrow > array.GetLength(1))
+if (numrow > array.GetLength(1) || numcol > array.GetLength(0))
 {
     Console.WriteLine("Such element does not exist");
 }
 else
 {
-    Console.WriteLine($"Element is {array[numcol-1,numrow-1]}");
-} */
+    Console.WriteLine($"Element is {array[numrow,numcol]}");
+} 
 
 int [,] CreateArray (int row, int col, int min, int max) {
     Random rand = new Random();
@@ -70,11 +70,11 @@ int GetNumber (string description) {
 
 }
 
-int [,] array = CreateArray(3,4, -100, 100);
-PrintArray(array);
+//int [,] array = CreateArray(3,4, -100, 100);
+//PrintArray(array);
 
 
-void CheckNum (int row, int col) {
+/*void CheckNum (int row, int col) {
 
     int numrow = GetNumber("Enter row number ");
     int numcol = GetNumber("Enter column number ");
@@ -89,7 +89,8 @@ void CheckNum (int row, int col) {
     Console.WriteLine(CheckNum);
 }
 }
-CheckNum(3,4);
+CheckNum(3,4);*/
+
 
 
 
