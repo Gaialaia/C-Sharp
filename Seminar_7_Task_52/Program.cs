@@ -7,38 +7,40 @@
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3. */
 
+int row = 3;
+int col = 4;
+int[,] array = new int[row,col];
 
-Console.Clear();
-int [,] CreateArray (int row, int col, int min, int max) {
+void MakeArray (int row, int col){
+    int i,j;
     Random rand = new Random();
-    int [,] array = new int [row, col];
-    for (int i = 0; i < row; i++)
+    for (i = 0; i < row; i++)
     {
-        for (int j = 0; j < col; j++)
-        {
-            array[i,j] = rand.Next(min, max +1);
-        }
-    } 
-    return array;
-
-}
-
-
-
-
-
-void PrintArray (int [,]array){
-    int row = array.GetLength(0);
-    int col = array.GetLength(1);
-      for (int i = 0; i < row; i++)
+    Console.WriteLine();
+    for (j = 0; j < col; j++)
     {
-        for (int j = 0; j < col; j++)
-        {
-            Console.Write($"{array[i,j]}\t");
-        }
-        Console.WriteLine();
-    } 
-}
+    array[i,j] = rand.Next(1,9);
+    Console.Write($"{array[i,j]}\t");
+    }
+    Console.WriteLine();
+    }
+ }
 
-int [,] array = CreateArray(3,4, 10, 100);
-PrintArray(array);
+void ArithMean(int row, int col) {
+int i,j;
+
+    for (j = 0; j < col; j++)
+    {
+    double sum = 0;
+    for (i = 0; i < row; i++)
+    {
+    sum = sum + array[i,j];
+    }
+    Console.Write($"{sum/(i)}\t");
+    }
+ }
+
+MakeArray(row,col);
+Console.WriteLine();
+ArithMean(row,col);
+
