@@ -10,47 +10,55 @@
 
 
 
-void PrintArray(int[,] matr)  //varialbe name!!!
+void PrintArray(int[,] matr) 
 {
- 
     for (int i = 0; i < matr.GetLength(0); i++)
     {
     for (int j = 0; j < matr.GetLength(1); j++)
     {
-    Console.Write($"{matr[i, j]} "); // filled with "0"
+    Console.Write($"{matr[i, j]} "); 
     }
     Console.WriteLine();
 }
 }
 void FillArray(int[,] matr)
 {
- for (int i = 0; i < matr.GetLength(0); i++)  // getLength(0) - получить количество строк, rows or // i < 3
+    for (int i = 0; i < matr.GetLength(0); i++)
  {
- for (int j = 0; j < matr.GetLength(1); j++) //getLength(1) - получить количество columns or // j < 4
+    for (int j = 0; j < matr.GetLength(1); j++) 
  {
- matr[i,j] = new Random().Next(1,10);//[1; 10)
+    matr[i,j] = new Random().Next(1,10);
  }
  }
-
 }
 
 
-int RowSum (int [,] arr){
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-    for (int j = 0; j < arr.GetLength(1); j++)
-    {
-        int sum = 0;
-        sum = sum += arr[i,j];
-    }
-
-}
-}
-
-int[,] matrix = new int[4, 4]; // variable name!!! new array
+int[,] matrix = new int[4, 4];
 
 FillArray(matrix);
-PrintArray(matrix);
 Console.WriteLine();
-RowSum(matrix);
 PrintArray(matrix);
+
+int RowSum (int [,] arr, int i){
+    int sum = arr [i,0];
+        for (int j = 1; j < arr.GetLength(1); j++) {
+            sum += arr [i,j];
+    } 
+    return sum;
+}
+
+
+int MinElSum = 1;
+int sum = RowSum(matrix,0);
+    for (int i = 1; i < matrix.GetLength(0); i++)
+{
+    if (sum > RowSum(matrix,i))
+{
+{
+    sum = RowSum(matrix,i);
+    MinElSum = i +1;
+
+}    
+}
+}
+    Console.WriteLine($"row {MinElSum}");
