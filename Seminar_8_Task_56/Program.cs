@@ -61,4 +61,5 @@ int sum = RowSum(matrix,0);
 }    
 }
 }
+    Console.WriteLine();
     Console.WriteLine($"row {MinElSum}");
