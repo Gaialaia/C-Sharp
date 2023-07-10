@@ -5,28 +5,23 @@
 34(1,0,0) 41(1,1,0)
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1)*/
-using System;
-class MultiDemoArray {
-static void Main () {
-int [,,] nums = new int [2,2,2];
 
-int [] arr = {1,2,3,4};
+int [,,] nums = new int [2,2,2];//1,2,3 индексы, две таблицы, две строки, два столбца
+
+int [] arr = {0,0};
+
 
 for (int i = 0; i < nums.GetLength(0); i++) {
-
     //Console.WriteLine("{0};", i+1);
 
 for (int j = 0; j < nums.GetLength(1); j++){
-
 for (int k = 0; k < nums.GetLength(2); k++) {
-    nums [i,j,k] = arr [i];
-    arr [i] ++;
+    nums [i,j,k] = new Random().Next(1,10);
+    arr [j] ++;
     //Console.Write(nums [i,j,k]+" "); ({i},{j},{k})
     Console.Write($"{nums[i, j, k]} ({i},{j},{k}) ");
 } 
 Console.WriteLine(); 
 }
 }
-}
-} 
 
